@@ -17,13 +17,18 @@ label {
     display: block;
     margin-bottom: .25rem;
 }
-input:focus, textarea:focus, select:focus {
+
+
+
+
+input:focus, textarea:focus, select:focus, input[type="date"]:focus-within {
     outline: 0.25rem solid var(--surface-secondary);
     border: .125rem solid var(--stroke-highlight);
     outline-offset: .1px;
 }
 
 input[type="date"]{
+    position: relative;
     &::-webkit-calendar-picker-indicator {
         opacity: 0;
     }
@@ -37,6 +42,28 @@ input[type="date"]{
         height: 1.25rem;
 
         top: 50%;
-        transform: translate(-50%);
+        transform: translateY(-50%);
     }
+}
+
+select {
+    background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
+
+.adress .flex {
+    gap: 1.25rem
+}
+
+.input-wrapper:has([disabled]){
+    oppacity: 0.5;
+}
+
+input {
+    &[disabled] {
+        background-color: var(--surface-disabled);
+    }
+
+    border: 1px solid var(--stroke-default);
+
+    color: var(--text-primary);
 }
