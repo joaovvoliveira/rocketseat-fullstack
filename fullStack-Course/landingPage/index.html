@@ -14,8 +14,16 @@
         <link rel="stylesheet" href="./styles/index.css" />
     </head>
     <body>
-      <h1 class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, eveniet ad! Nisi, repellat, perspiciatis voluptatem quia, sed dolore ut ullam exercitationem dolores asperiores non accusantium possimus soluta quod est sapiente.</h1>
-      <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis sint labore a pariatur. Mollitia pariatur ullam asperiores quidem molestiae saepe hic itaque temporibus ea. In perferendis impedit provident dolore eos.</h2>
-      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio iste possimus, quam eos voluptatem deleniti magni, sint eligendi deserunt harum facere quae vel? Id nesciunt harum et voluptas reprehenderit?</h3>
+        <div class="flex gap-1">
+            <a href="#" class="btn btn-sm">Label</a>
+            <a href="#" class="btn btn-md">Label</a>
+            <button href="#" class="btn btn-lg">Label</button>
+        </div>
+
+        <div class="flex gap-1">
+            <a aria-label="Label" href="#" class="btn btn-sm"></a>
+            <span aria-label="Label" href="#" class="btn btn-md"></span>
+            <button aria-label="Label" href="#" class="btn btn-lg"></button>
+        </div>
     </body>
 </html>
