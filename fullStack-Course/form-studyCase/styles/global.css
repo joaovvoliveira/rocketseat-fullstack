@@ -1,0 +1,37 @@
+:root {
+  /* Brand colors */
+  --brand-light: #59B2FF;
+  --brand-mid: #3487CF;
+  --brand-dark: #1D6FB6;
+
+  /* Accent Colors */
+
+  --purple: #B259FF;
+  --green: #59FF91;
+  --fuschia: #FF59F9;
+  --pink: #FF598B;
+  --orange: #FFB259;
+  --yellow: #FFCF59;
+  --lime: #E1FF59;
+  --cyan: #59FFF9;
+  --navy: #6A59FF;
+
+  --danger: #FF5959;
+
+  /* Input / Shape / Text */
+
+  --input-base: #1C1F21;
+  --input-stroke: #363B40;
+  --input-placeholder: #869198;
+
+  --shape-background: #131516;
+  --shape-body: #212427;
+  --shape-button: #2D3136;
+  --shape-hover: #383D42;
+
+  --text-body: #C8CDD0;
+  --text-heading: #F9F9F9:
+
+
+  /* Typography */
+}
