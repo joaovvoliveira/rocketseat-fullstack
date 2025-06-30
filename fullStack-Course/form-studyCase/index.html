@@ -8,9 +8,88 @@
             href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./styles/index.css">
+        <link rel="stylesheet" href="./styles/index.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Festivite Convites</title>
     </head>
-    <body></body>
+    <body>
+        <div id="app">
+            <aside>
+                <div class="aside-container">
+                    <header>
+                        <img src="./assets/icons/Logo.svg" alt="" />
+                        <h1>Festivite</h1>
+                        <p>Crie um convite digital para o seu evento</p>
+                    </header>
+                </div>
+            </aside>
+            <main>
+                <div class="main-container">
+                    <h2>Crie seu convite</h2>
+                    <div class="aboutEvent">
+                        <img src="./assets/icons/calendar.svg" alt="" />
+                        <span>Sobre o Evento</span>
+                    </div>
+                </div>
+
+                <form action="#" enctype="multipart/form-data">
+                    <fieldset class="event-info"></fieldset>
+
+                    <div class="input-wrapper">
+                        <label for="eventName">Título</label>
+                        <input
+                            type="text"
+                            name="eventName"
+                            id="eventName"
+                            placeholder="Nome do Evento"
+                        />
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="input-date-wrapper">
+                            <label for="eventStart">Início</label
+                            ><input
+                                type="datetime-local"
+                                name="eventStart"
+                                id="eventStart"
+                                lang="pt-BR"
+                            />
+                        </div>
+
+                        <div class="input-date-wrapper">
+                            <label for="eventFinish">Fim</label
+                            ><input
+                                type="datetime-local"
+                                name="eventFinish"
+                                id="eventFinish"
+                                lang="pt-BR"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Local e tipo virao aqui -->
+
+                    <div class="textarea-wrapper">
+                        <label for="eventDescription">Descrição</label>
+                        <textarea
+                            rows="10"
+                            cols="30"
+                            name="eventDescription"
+                            id="eventDescription"
+                            placeholder="Escreva detalhes do evento"
+                        ></textarea>
+                    </div>
+
+                    <!-- Local e tipo virao aqui -->
+
+                    <div class="droparea-wrapper">
+                        <input type="file" name="eventWallpapaer" id="eventWallpapaer">
+                        <img src="./assets/icons/upload.svg" alt="" srcset="">
+                        <p>Selecionar</p>
+                    </div>
+
+                </form>
+            </main>
+        </div>
+    </body>
 </html>

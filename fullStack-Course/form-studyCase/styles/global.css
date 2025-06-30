@@ -29,9 +29,40 @@
   --shape-button: #2D3136;
   --shape-hover: #383D42;
 
-  --text-body: #C8CDD0;
-  --text-heading: #F9F9F9:
-
+  --text-body: #C8CDD0; 
+  --text-heading: #F9F9F9;
 
   /* Typography */
+
+  --font-logo: 400 2.5rem/normal 'Leckerli One', cursive;
+
+  --font-heading-md:700 1.75rem/normal 'Baloo 2', sans-serif;
+  --font-heading-sm: 700 1.125rem/normal 'Baloo 2', sans-serif;
+
+  --font-body-md: 600 1rem/normal 'Open Sans', sans-serif;
+  --font-body-sm: 600 0.875rem/normal 'Open Sans', sans-serif;
+  --font-body-xs: 600 0.75rem/normal 'Open Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--shape-background);
+  overflow: hidden;
+  font: var(--font-body-md);
+  margin: 0 auto;
+
+}
+
+h1 {
+  font: var(--font-logo);
+  color: var(--pink);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
