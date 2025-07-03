@@ -1,0 +1,25 @@
+.radio-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+
+.radio-image {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: .5rem;
+}
+
+input[type="radio"]{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+}

@@ -33,61 +33,120 @@
                 </div>
 
                 <form action="#" enctype="multipart/form-data">
-                    <fieldset class="event-info"></fieldset>
-
-                    <div class="input-wrapper">
-                        <label for="eventName">Título</label>
-                        <input
-                            type="text"
-                            name="eventName"
-                            id="eventName"
-                            placeholder="Nome do Evento"
-                        />
-                    </div>
-
-                    <div class="grid-2">
-                        <div class="input-date-wrapper">
-                            <label for="eventStart">Início</label
-                            ><input
-                                type="datetime-local"
-                                name="eventStart"
-                                id="eventStart"
-                                lang="pt-BR"
+                    <fieldset class="event-info">
+                        <div class="input-wrapper">
+                            <label for="eventName">Título</label>
+                            <input
+                                type="text"
+                                name="eventName"
+                                id="eventName"
+                                placeholder="Nome do Evento"
                             />
                         </div>
 
-                        <div class="input-date-wrapper">
-                            <label for="eventFinish">Fim</label
-                            ><input
-                                type="datetime-local"
-                                name="eventFinish"
-                                id="eventFinish"
-                                lang="pt-BR"
-                            />
+                        <div class="grid-2">
+                            <div class="input-date-wrapper">
+                                <label for="eventStart">Início</label
+                                ><input
+                                    type="datetime-local"
+                                    name="eventStart"
+                                    id="eventStart"
+                                    lang="pt-BR"
+                                />
+                            </div>
+
+                            <div class="input-date-wrapper">
+                                <label for="eventFinish">Fim</label
+                                ><input
+                                    type="datetime-local"
+                                    name="eventFinish"
+                                    id="eventFinish"
+                                    lang="pt-BR"
+                                />
+                            </div>
+
+                            <!-- Local e tipo virao aqui -->
+                            <div class="input-wrapper">
+                                <label for="">Selecione o tipo de evento</label>
+
+                                <div class="radio-wrapper">
+                                    <div class="radio-inner">
+                                        <div class="radio-image">
+                                            <input
+                                                type="radio"
+                                                name="event-type"
+                                                id="presencial"
+                                                value="presencial"
+                                            />
+                                            <img
+                                                src="./assets/icons/building-2.svg"
+                                                alt=""
+                                                srcset=""
+                                            />
+                                            <label for="presencial"
+                                                >Presencial</label
+                                            >
+                                        </div>
+                                        <div class="radio-image">
+                                            <img
+                                                src="./assets/icons/video.svg"
+                                                alt=""
+                                                srcset=""
+                                            />
+                                            <label for="online">Online</label>
+                                            <input
+                                                type="radio"
+                                                name="event-type"
+                                                id="online"
+                                                value="online"
+                                            />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="eventLocation">Local</label>
+                                <input
+                                    type="text"
+                                    name="eventLocation"
+                                    id="eventLocation"
+                                    placeholder="Endereço do Evento"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Local e tipo virao aqui -->
+                        <div class="textarea-wrapper">
+                            <label for="eventDescription">Descrição</label>
+                            <textarea
+                                rows="6"
+                                cols="30"
+                                name="eventDescription"
+                                id="eventDescription"
+                                placeholder="Escreva detalhes do evento"
+                            ></textarea>
+                        </div>
 
-                    <div class="textarea-wrapper">
-                        <label for="eventDescription">Descrição</label>
-                        <textarea
-                            rows="10"
-                            cols="30"
-                            name="eventDescription"
-                            id="eventDescription"
-                            placeholder="Escreva detalhes do evento"
-                        ></textarea>
-                    </div>
+                        <!-- Local e tipo virao aqui -->
 
-                    <!-- Local e tipo virao aqui -->
-
-                    <div class="droparea-wrapper">
-                        <input type="file" name="eventWallpapaer" id="eventWallpapaer">
-                        <img src="./assets/icons/upload.svg" alt="" srcset="">
-                        <p>Selecionar</p>
-                    </div>
-
+                        <div class="droparea-wrapper">
+                            <label for="eventWallpapaer">Foto de capa</label>
+                            <div class="dropzone">
+                                <input
+                                    type="file"
+                                    name="eventWallpapaer"
+                                    id="eventWallpapaer"
+                                />
+                                <img
+                                    src="./assets/icons/upload.svg"
+                                    alt=""
+                                    srcset=""
+                                />
+                                <span>Selecionar</span>
+                            </div>
+                        </div>
+                    </fieldset>
                 </form>
             </main>
         </div>

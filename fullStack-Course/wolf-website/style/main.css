@@ -1,0 +1,68 @@
+.introducao {
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: center;
+
+    h1 {
+        font-size: 4.5rem;
+        line-height: 1.125;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    h1::before {
+        content: "";
+        background: url("../detalhe.svg") no-repeat center;
+        display: block;
+        width: 130px;
+        height: 100px;
+        z-index: -1;
+        position: absolute;
+        left: -30px;
+        top: -20px;
+    }
+    p {
+        font-size: 1.25rem;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+        color: #525252;
+    }
+}
+
+@media (max-width: 1000px) {
+    .introducao {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h1::before {
+            width: 100px;
+            height: 80px;
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .introducao {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        gap: 2rem;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h1::before {
+            width: 30px;
+            height: 20px;
+            left: 0px;
+        }
+    }
+}

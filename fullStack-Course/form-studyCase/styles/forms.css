@@ -1,0 +1,22 @@
+@import url(./fields/index.css);
+
+form {
+    margin-top: 1.5rem;
+}
+
+.event-info {
+    border: none;
+    display: grid;
+    gap: 1rem;
+
+    label {
+      margin-bottom: 0.75rem;
+    }
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}

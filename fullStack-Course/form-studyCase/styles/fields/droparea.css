@@ -1,0 +1,20 @@
+.dropzone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    background-color: var(--shape-button);
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    & input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    
+    &:hover, &:has(input:focus) {
+      cursor: pointer;
+      border: 1px dashed var(--brand-light);
+    }
+}

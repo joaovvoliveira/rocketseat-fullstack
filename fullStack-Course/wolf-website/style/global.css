@@ -1,0 +1,27 @@
+body {
+  font-family: 'Fira Sans', Arial ,sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: #141414;
+}
+
+h1,h2,h3,p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, ol {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
