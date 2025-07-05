@@ -1,42 +1,44 @@
 body {
-  font-family: 'Fira Sans', Arial ,sans-serif;
-  margin: 0px;
-  padding: 0px;
-  color: #141414;
-  margin-bottom: 1000px;
+    font-family: "Fira Sans", Arial, sans-serif;
+    margin: 0px;
+    color: #141414;
 }
 
-h1,h2,h3,p {
-  margin: 0px;
-  padding: 0px;
+h1,
+h2,
+h3,
+p {
+    margin: 0px;
 }
 
-ul, ol {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.subtitulo {
-  font: 700 9rem/1 'Fira Sans', Arial, sans-serif;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: none;
-  text-transform: uppercase;
-}
-
-.empresa-titulo {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.subtitulo {
+    font-size: 8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    word-break: break-all;
+    max-width: 4ch;
+}
+
+@media (max-width: 800px) {
+    .subtitulo {
+        font-size: 3rem;
+        text-transform: capitalize;
+        max-width: initial;
+    }
 }
