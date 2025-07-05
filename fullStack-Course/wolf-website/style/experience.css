@@ -1,0 +1,69 @@
+.empresas-box{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.experiencia {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .experiencia-texto {
+        font-size: 1.5rem;
+        line-height: 32px;
+        max-width: 560px;
+        padding: 0 100px 60px 70px;
+    }
+
+    .empresa {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        
+        .empresa-ano {
+            padding-top: 20px;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .empresa-setor {
+            display: flex;
+            padding: 20px;
+            background-color: #d4d4d4;
+            gap: 20px;
+
+            .empresa-descricao {
+                display: flex;
+                flex-direction: column;
+                max-width: 400px;
+
+                .empresa-texto {
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                }
+            }
+
+            .empresa-cargo {
+                display: flex;
+                flex-direction: column;
+                min-width: 200px;
+
+                .empresa-habilidades {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
+                    li {
+                        background-color: #f0f0f0;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+}
