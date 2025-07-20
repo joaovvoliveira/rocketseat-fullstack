@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="styles.css" />
+
+        <title>Aulas de Javascript</title>
+    </head>
+    <body>
+        <main>
+            <h1>Convidados</h1>
+
+            <form>
+                <input type="text" placeholder="Digite o nome" id="name" />
+                <button type="submit" id="btn" class="button">Adicionar</button>
+            </form>
+
+            <ul>
+                <li id="guest-1" class="guest">
+                    <span>Rodrigo</span>
+                </li>
+
+                <li id="guest-2" class="guest">
+                    <span>Mayk</span>
+                </li>
+
+                <li id="guest-2" class="guest">
+                    <span>Diego</span>
+                </li>
+
+                <li id="guest-2" class="guest">
+                    <span>Tamires</span>
+                </li>
+
+                <li id="guest-2" class="guest">Lara</li>
+
+                <li id="guest-2" class="guest">
+                    <span>Vini</span>
+                </li>
+                <li id="guest-2" class="guest">
+                    <span>Rennan</span>
+                </li>
+            </ul>
+        </main>
+
+        <script>
+
+
+
+
+            // const input = document.querySelector("input");
+            
+            // const form = document.querySelector("form");
+
+            // input.addEventListener("input", () => {
+            //   const value = input.value;
+            //   const regex = /\D+/g;
+            // })
+
+            // form.addEventListener("submit", (event) => {
+            //     event.preventDefault();
+            //     const regex = /\D+/g;
+
+            //     if(regex.test(input.value)) {
+            //         alert("Digite apenas números");
+            //         return;
+            //     }
+
+                // const value = input.value.replace(regex, "");
+                // console.log(value);
+              // });
+
+            // Substitui o padrao encontrado na string por vazio, só traria os numeros em uma variavel
+            // const num = value.replace(regex, "");
+            
+            // retorna o padrao encontrado na string
+            // console.log(value.match(regex));
+
+            // Testa se o padrao encontrado na string é válido
+            // const isValid = regex.test(value);
+            
+
+            // // keydown - quando o usuário pressiona alguma tecla
+            // input.addEventListener("keydown", (event) => {
+            //     console.log(event.key);
+            // });
+
+            // // kreypress - quando o usuário pressiona uma tecla do tipo caractere
+            // input.addEventListener("keypress", (event) => {
+            //     console.log(event.key + " keypress");
+            // });
+
+            // // keyup - quando o usuário solta uma tecla
+            // input.addEventListener("keyup", (event) => {
+            //     console.log(event.key);
+            // });
+
+            // input.onchange = (event) => inputChange();
+            
+            // function inputChange() {
+            //   console.log('mudou o bang')
+            // }
+            //     if (event.key === "Enter") {
+            //         const submitBtn = document.querySelector("button");
+
+            //         submitBtn.addEventListener("click", (event) => {
+            //             console.log("clickou");
+            //             alert("clickou");
+            //         });
+            //     }
+            // });
+
+            // form.onsubmit = () => {
+              //   event.preventDefault()
+              //   console.log('submitou');
+              // }
+              
+              // // ONSUBMIT considera apenas o ultimo evento
+            // form.onsubmit = () => {
+            //   event.preventDefault()
+            //   console.log('submitou 2');
+            // }
+
+            // // ADDEVENTLISTENER considera todos os eventos
+            // form.addEventListener('submit', (event) => {
+            //   event.preventDefault()
+            //   console.log('submitou 3');
+            // })
+
+            // form.addEventListener('submit', (event) => {
+            //   event.preventDefault()
+            //   console.log('submitou 3');
+            // })
+
+            // Utilizando eventos de lista
+
+            // const ul = document.querySelector("ul");
+            // ul.addEventListener("scroll", (event) => {
+            //     console.log(ul.scrollTop);
+
+            //     if (ul.scrollTop > 300) {
+            //         alert("Fim da lista");
+            //         ul.scrollTo({
+            //             top: 0,
+            //             behavior: "smooth",
+            //         });
+            //     }
+            // });
+        </script>
+    </body>
+</html>
