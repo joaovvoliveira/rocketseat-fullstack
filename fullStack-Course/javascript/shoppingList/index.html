@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+      <header class="header container">
+          <img src="./assets/logo.svg" alt="" srcset="">
+      </header>
+      <main class="main container">
+        <span><- Voltar</span>
+        <h1>Compras da Semana</h1>
+
+        <form action="">
+          <div class="inputBtn-group">
+            <input type="text" id="itemToAdd" placeholder="Adicionar Item">
+            <button type="submit" class="btn-default">Adicionar Item</button>
+          </div>
+
+          <ul id="listItems">
+
+              <li class="listItem">
+                <input type="checkbox" id="item1" name="shoppingItem" value="Arroz">
+                <label for="item1">Arroz</label>
+                <img src="./assets/icon delete.svg" alt="" srcset="">
+              </li>
+              <li class="listItem">
+                <input type="checkbox" id="item2" name="shoppingItem" value="Feijão">
+                <label for="item2">Feijão</label>
+                <img src="./assets/icon delete.svg" alt="" srcset="">
+              </li>
+              <li class="listItem">
+                <input type="checkbox" id="item3" name="shoppingItem" value="Leite">
+                <label for="item3">Leite</label>
+                <img src="./assets/icon delete.svg" alt="" srcset="">
+              </li>
+            </ul>
+          <span class="removedItem showUp"><img src="./assets/warning-circle-filled.svg" alt="" srcset="">O Item foi removido da lista <strong id="close">X</strong></span>
+        </form>
+      </main>
+
+      <script src="./script.js"></script>
+    </body>
+</html>
