@@ -1,44 +1,78 @@
-{/* <div class="listItem">
-  <input type="checkbox" id="item3" name="shoppingItem" value="Leite">
-  <label for="item3">Leite</label>
-  <img src="./assets/icon delete.svg" alt="" srcset="">
-</div> */}
+const form = document.querySelector('form')
 
-const form = document.querySelector('form');
-const itemToAdd = document.getElementById('itemToAdd')
-const listItem = document.getElementsByClassName('listItem');
-const btnSubmit = document.querySelector('button')
-let listLenght = 4
-const close = document.getElementById('close')
+let idItem = 4;
+let idRemover = 1
+const listItems = document.getElementById('listItems')
+const listItem = document.querySelectorAll('.listItem')
 
+console.log(listItem[0])
 
-itemToAdd.addEventListener('input', () => {
-  console.log(itemToAdd.value)
+listItem[0].remove()
+
+listItem.forEach((li) => {
+  const btnRemover = document.querySelector('a');
+  btnRemover.id = `btnRemover${idRemover}`
+  console.log(li)
+  console.log(btnRemover)
+
 })
 
+// btnRemover.addEventListener('click', (e) => {
+//   e.preventDefault()
 
-form.onsubmit = (e) => {
-  e.preventDefault();
+// btnRemover.addEventListener('click', (e) => {
+//   e.preventDefault()
+
+//   btnRemover.forEach((btn) => {
+
+//   })
+// })
 
 
+//   console.log(listItem[id])
 
+// })
 
-  btnSubmit.addEventListener('click', () => {
-    const listItems = document.getElementById('listItems');
+function removerItem(id) {
+  const btnRemove = document.getElementById(`btnRemover${id}`)
 
-    const li = document.createElement('li')
-    li.className = 'listItem'
-    li.innerHTML = ` <input type="checkbox" id="item${listLenght}" name="shoppingItem" value="${itemToAdd.value}">
-                  <label for="item${listLenght}">${itemToAdd.value}</label>
-                  <img src="./assets/icon delete.svg" alt="" srcset="">`;
+  const hasNumber = /\D+/g;
+  const idRemove = btnRemove.id.replace(hasNumber, '') - 1;
 
-    console.log(li)
-    listItems.appendChild(li);
-    listLenght++;
-
-  });
+  console.log(idRemove)
+  // itemLista[id].remove()
 }
 
-  close.addEventListener('click', () => {
-      console.log('teste')
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const itemToAdd = document.getElementById('itemToAdd').value;
+
+  adicionarItem(itemToAdd)
+  removerItem(1)
+
+})
+
+function adicionarItem(nomeItem) {
+  const li = document.createElement('li')
+  li.classList.add('listItem')
+  li.innerHTML =
+    `
+  <input type="checkbox" id="item${idItem}" name="shoppingItem" value="${nomeItem}">
+  <label for="item${idItem}">${nomeItem}</label>
+  <a href="" id=""><img src="./assets/icon delete.svg" alt="" srcset=""></a>
+  `
+  listItems.append(li)
+
+  // Selecionar o botao recem criado
+  const btnRemover = li.querySelector('a')
+  console.log(btnRemover)
+  btnRemover.addEventListener('click', (e) => {
+    e.preventDefault()
+    li.remove()
+    console.log('Item Removido:', nomeItem)
   })
+
+  idItem++;
+  document.getElementById('itemToAdd').value = ''
+}

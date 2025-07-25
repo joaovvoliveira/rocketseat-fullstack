@@ -76,9 +76,11 @@ body {
         display: flex;
         flex-direction: column;
         gap: 3rem;
+
         .inputBtn-group {
           display: grid;
           grid-template-columns: 1fr auto;
+          margin-bottom: 0;
           gap: 16px;
           
           input {
