@@ -1,47 +1,27 @@
 const form = document.querySelector('form')
-
-let idItem = 4;
-let idRemover = 1
-const listItems = document.getElementById('listItems')
 const listItem = document.querySelectorAll('.listItem')
+let idItem = 3;
 
-console.log(listItem[0])
+listItem.forEach((item) => {
+  const removerItem = item.querySelector('a')
+  removerItem.addEventListener('click', (e) => {
+    e.preventDefault()
+    item.remove()
+    console.log('Removido: ' + item.textContent)
+  })
 
-listItem[0].remove()
-
-listItem.forEach((li) => {
-  const btnRemover = document.querySelector('a');
-  btnRemover.id = `btnRemover${idRemover}`
-  console.log(li)
-  console.log(btnRemover)
-
+  const input = item.querySelector('input[type=checkbox]')
+  input.addEventListener('change', () => {
+    if(input.checked) {
+      item.style.backgroundColor = 'var(--content-tertiary)'
+    } else {
+      item.style.backgroundColor = 'var(--background-secondary)'
+    }
+  })
 })
 
-// btnRemover.addEventListener('click', (e) => {
-//   e.preventDefault()
-
-// btnRemover.addEventListener('click', (e) => {
-//   e.preventDefault()
-
-//   btnRemover.forEach((btn) => {
-
-//   })
-// })
 
 
-//   console.log(listItem[id])
-
-// })
-
-function removerItem(id) {
-  const btnRemove = document.getElementById(`btnRemover${id}`)
-
-  const hasNumber = /\D+/g;
-  const idRemove = btnRemove.id.replace(hasNumber, '') - 1;
-
-  console.log(idRemove)
-  // itemLista[id].remove()
-}
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -49,7 +29,6 @@ form.addEventListener('submit', (e) => {
   const itemToAdd = document.getElementById('itemToAdd').value;
 
   adicionarItem(itemToAdd)
-  removerItem(1)
 
 })
 
