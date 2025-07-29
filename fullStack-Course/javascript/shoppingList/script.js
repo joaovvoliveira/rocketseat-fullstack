@@ -21,8 +21,6 @@ listItem.forEach((item) => {
 })
 
 
-
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
