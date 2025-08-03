@@ -1,3 +1,67 @@
+// Desestruturacoes - Rest Operador
+
+// const user = {
+//   name: 'Victor',
+//   nickname: 'Vida',
+//   idade: 29,
+//   adress: {
+//     street: 'Nelson Street',
+//     number: 33
+//   },
+// };
+
+// function mostrarIdade({idade, name, adress}) {  // Dessa forma ele entende que é para 
+//   return adress                                 // trazer esses itens do do objeto passado como funcao
+// }
+
+// const { name, idade:age, adress, nickname = 'Tico' } = user
+// const { adress, idade: age } = user
+
+// const { name, idade, ...rest } = user
+// document.body.innerText = JSON.stringify(rest,null,2)
+
+// const array = [1,2,3,687,475,3,2,4,46,6,7,8]
+
+// const [first,second,third, ...rest2]  = array;
+
+// document.body.innerText = JSON.stringify({first,second,third, rest2}, null,2)
+
+// OPTIONAL CHAINING
+
+const user = {
+  name: 'Victor',
+  nickname: 'Vida',
+  age: 29,
+  adress: {
+    street: 'Nelson Street',
+    number: 33,
+    zip: {
+      code: 18044720,
+      city: 'Sorocaba'
+    },
+    // showFullAdress(){
+    //   return 'ok'
+    // }
+  },
+};
+
+const key = 'age'
+
+// console.log(user.adress?.zip?.code ?? 'Nao Informado')
+// console.log(user.adress?.showFullAdress?.())
+
+// console.log(user[key])
+const { adress, street } = user
+// document.body.innerText = JSON.stringify({ adress }, null, 2)- optimal
+
+// METODOS DE ARRAY
+
+const array = [1,2,3,4,5]
+
+for (const i in array) {
+  document.body.innerText += array[i]
+}
+
 // const Dom = {
 //   seletor: 'li',
 //   element() {
@@ -32,7 +96,7 @@ const pessoa = {
   }
 }
 
-function Person(name,age) {
+function Person(name, age) {
   this.name = name
   this.age = age
   this.andar = () => {
@@ -65,7 +129,7 @@ function Dom(seletor) {
   //   this.element()[position].classList.toggle('ativo')
   // }
 
-//  PARA TODOS DE UMA VEZ
+  //  PARA TODOS DE UMA VEZ
   this.ativar = (classe) => {
     this.element().forEach(item => {
       item.classList.add(classe)
@@ -79,7 +143,7 @@ function Dom(seletor) {
 }
 
 const li = new Dom('li')
-console.log(li.element())
+// console.log(li.element())
 
 
 /* === === === === === === === === === === === === === ===  */
@@ -88,7 +152,7 @@ const newArray = new Array()
 
 newArray.push('Victor')
 
-console.log(newArray.length)
+// console.log(newArray.length)
 
 let fruits = [
   'Apple', 'Banana', 'Orange', 'Strawberry', 'Grapes',
@@ -111,7 +175,7 @@ fruits.pop()
 let position = fruits.indexOf('Lime')
 
 //Remove os itens de uma lista, da posicao 1, 5 itens
-const newFruits = fruits.splice(1,5)
+const newFruits = fruits.splice(1, 5)
 // const newFruits = fruits.splice(position,1)
 // console.log(newFruits)
 
@@ -124,7 +188,7 @@ const newFruits = fruits.splice(1,5)
 */
 
 function Carro(modelo, precoInicial) {
-  if(modelo === 'Civic'){
+  if (modelo === 'Civic') {
     this.marca = 'Honda'
   } else if (modelo === 'Palio') {
     this.marca = 'Fiat'
