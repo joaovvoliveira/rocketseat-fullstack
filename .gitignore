@@ -1,2 +1,5 @@
 fullStack-Course/javascript/studyCase-node/node_modules/
-
+*.DS_Store
+fullStack-Course/.DS_Store
+fullStack-Course/javascript/.DS_Store
+newsPortal/.DS_Store
