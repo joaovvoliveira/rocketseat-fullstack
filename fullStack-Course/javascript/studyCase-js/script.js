@@ -3511,21 +3511,21 @@ const pessoas = [
 // Dado um array de nomes em minúsculas, use map() para transformá-los em letras maiúsculas.
 
 const maiusculas = nomes.map(nome => nome.toUpperCase())
-document.body.innerText = JSON.stringify(maiusculas, null, 2)
+// document.body.innerText = JSON.stringify(maiusculas, null, 2)
 
 // 🧪 Exercício 2 – Primeira letra maiúscula
 
 // Dado um array de nomes, use map() para deixar apenas a primeira letra de cada nome em maiúscula.
 
 const firstLetter = maiusculas.map(nome => `${nome.charAt(0)}${nome.slice(1).toLowerCase()}`);
-document.body.innerText = JSON.stringify(firstLetter, null, 2)
+// document.body.innerText = JSON.stringify(firstLetter, null, 2)
 
 // 🧪 Exercício 3 – Tamanho das palavras
 
 // Dado um array de strings, use map() para retornar um novo array com o tamanho (número de caracteres) de cada palavra.
 
 const qtdLetras = firstLetter.map(nome => nome.length)
-document.body.innerText = JSON.stringify(qtdLetras, null, 2)
+// document.body.innerText = JSON.stringify(qtdLetras, null, 2)
 
 // 🧪 Exercício 4 – Adicionar prefixo
 
@@ -3539,23 +3539,23 @@ const pessoasPrefix = pessoas.map(pessoa => {
   //   return `Ms. ${pessoa.nome}`
 })
 
-document.body.innerText = JSON.stringify(pessoasPrefix, null, 2)
+// document.body.innerText = JSON.stringify(pessoasPrefix, null, 2)
 
 // 🧪 Exercício 5 – Substituir espaços por hífens
 
 // Dado um array de frases curtas, use map() para substituir todos os espaços por hífens (-).
 
 const pessoasHifen = pessoasPrefix.map(pessoa => pessoa.replace('. ', '-'))
-document.body.innerText = JSON.stringify(pessoasHifen, null, 2)
+// document.body.innerText = JSON.stringify(pessoasHifen, null, 2)
 
 // Exercícios com find()
 // 1.	Filtre apenas as pessoas maiores de idade (18 anos ou mais).
 
 const olderThem18 = pessoas.filter(pessoa => pessoa.idade >= 18)
-document.body.innerText = JSON.stringify(olderThem18, null, 2)
+// document.body.innerText = JSON.stringify(olderThem18, null, 2)
 
 const younguer = olderThem18.find(pessoa => pessoa.idade < 18) || 'Nao possui'
-console.log(younguer)
+// console.log(younguer)
 
 /*
 const resultado = olderThem18.find(pessoa => pessoa.idade < 18);
@@ -3564,13 +3564,13 @@ const younguer = resultado ? resultado : "não possui";
 
 // 2.	Filtre apenas as pessoas do sexo masculino.
 const male = pessoas.filter(pessoa => pessoa.sexo === 'M')
-document.body.innerText = JSON.stringify(male, null, 2)
+// document.body.innerText = JSON.stringify(male, null, 2)
 
 // 3.	Filtre as pessoas cujo nome começa com a letra “A”.
 const initialA = pessoas.filter(pessoa => pessoa.nome.charAt(0) === 'A' ?? pessoa)
-console.log(initialA)
+// console.log(initialA)
 
-document.body.innerText = JSON.stringify(initialA, null, 2)
+// document.body.innerText = JSON.stringify(initialA, null, 2)
 
 // 4.	Filtre as mulheres que têm mais de 18 anos.
 const female18 = pessoas.filter(pessoa => (pessoa.idade >= 18 && pessoa.sexo === 'F') ?? pessoa)
@@ -3578,12 +3578,12 @@ const female18 = pessoas.filter(pessoa => (pessoa.idade >= 18 && pessoa.sexo ===
 
 // 5.	Filtre as pessoas cujo id é um número par.
 const parID = pessoas.filter(pessoa => pessoa.id % 2 === 0)
-console.log(parID)
+// console.log(parID)
 
 // Exercícios com reduce()
 // 	1.	Some as idades de todas as pessoas do array.
 const totalAge = pessoas.reduce((acc, pessoa) => acc + pessoa.idade, 0)
-console.log(totalAge)
+// console.log(totalAge)
 
 // 	2.	Conte quantas pessoas são do sexo feminino.
 const qtdWomen = pessoas.reduce((acc, pessoa) => {
@@ -3592,13 +3592,13 @@ const qtdWomen = pessoas.reduce((acc, pessoa) => {
   }
   return acc
 }, 0)
-console.log(qtdWomen)
+// console.log(qtdWomen)
 
 // 	3.	Calcule a média das idades das pessoas.
 const average = pessoas.reduce((acc, pessoa) => {
   return (acc + pessoa.idade)
 }, 0) / pessoas.length
-console.log(average)
+// console.log(average)
 
 // 	4.	Crie um objeto que agrupe os nomes por sexo (ex: um array de nomes para cada sexo).
 const perGender = pessoas.reduce((acc, person) => {
@@ -3609,13 +3609,13 @@ const perGender = pessoas.reduce((acc, person) => {
   return acc
 }, {})
 
-console.log(perGender)
+// console.log(perGender)
 
 // 	5.	Encontre a maior idade presente no array.
 // const maiorIdade = pessoas.reduce((acc, person) => person.idade > acc ? person.idade : acc = person.idade, 0)
 const maiorIdade = pessoas.reduce((max, person) => person.idade > max ? person.idade : max,0)
 
-console.log(maiorIdade)
+// console.log(maiorIdade)
 
 // console.table(pessoas)
 // Exercícios com find()
@@ -3624,3 +3624,174 @@ console.log(maiorIdade)
 // 	3.	Encontre a primeira pessoa com o id igual a 5.
 // 	4.	Encontre a primeira pessoa do sexo feminino com menos de 20 anos.
 // 	5.	Encontre a primeira pessoa cujo nome começa com a letra “C”.
+
+// new Date() 
+// // Cria uma nova data com o momento atual (data e hora do sistema)
+
+// new Date("2025-06-17")
+// // Cria uma data a partir de uma string (17 de junho de 2025, 00:00 UTC)
+
+// new Date(2025, 5, 17)
+// // Cria uma data com ano=2025, mês=junho (5, porque janeiro=0), dia=17 (hora=00:00)
+
+// new Date(2025, 5, 17, 15, 30, 45, 500)
+// // Cria uma data específica: 17/06/2025 15:30:45.500
+
+// Date.now()
+// // Retorna o timestamp atual (milissegundos desde 1º jan 1970 UTC)
+
+// Date.parse("2025-06-17")
+// // Converte uma string de data para timestamp (ms desde 1970)
+
+// Date.UTC(2025, 5, 17, 12, 0, 0)
+// // Cria timestamp em UTC (ano, mês, dia, hora, min, seg)
+
+// getFullYear()    // Retorna o ano (ex: 2025)
+// getMonth()       // Retorna o mês (0-11, janeiro=0)
+// getDate()        // Retorna o dia do mês (1-31)
+// getDay()         // Retorna o dia da semana (0-6, domingo=0)
+// getHours()       // Retorna a hora (0-23)
+// getMinutes()     // Retorna os minutos (0-59)
+// getSeconds()     // Retorna os segundos (0-59)
+// getMilliseconds()// Retorna os milissegundos (0-999)
+// getTime()        // Retorna o timestamp (ms desde 1970)
+// getTimezoneOffset() // Diferença em minutos do UTC
+
+// getUTCFullYear()    // Ano UTC
+// getUTCMonth()       // Mês UTC (0-11)
+// getUTCDate()        // Dia do mês UTC (1-31)
+// getUTCDay()         // Dia da semana UTC (0-6)
+// getUTCHours()       // Hora UTC (0-23)
+// getUTCMinutes()     // Minutos UTC
+// getUTCSeconds()     // Segundos UTC
+// getUTCMilliseconds()// Milissegundos UTC
+
+// setFullYear(2026)         // Define o ano
+// setMonth(7)               // Define o mês (0-11 → agosto=7)
+// setDate(25)               // Define o dia do mês
+// setHours(14)              // Define a hora (0-23)
+// setMinutes(45)            // Define os minutos
+// setSeconds(30)            // Define os segundos
+// setMilliseconds(500)      // Define os milissegundos
+// setTime(1739836800000)    // Define o timestamp (ms desde 1970)
+
+// setUTCFullYear(2026)    // Define o ano UTC
+// setUTCMonth(7)          // Define o mês UTC
+// setUTCDate(25)          // Define o dia UTC
+// setUTCHours(14)         // Define a hora UTC
+// setUTCMinutes(45)       // Define minutos UTC
+// setUTCSeconds(30)       // Define segundos UTC
+// setUTCMilliseconds(500) // Define milissegundos UTC
+
+// toString()
+// // Converte para string completa (inclui data, hora e fuso horário)
+
+// toDateString()
+// // Converte apenas para data legível (ex: "Tue Jun 17 2025")
+
+// toTimeString()
+// // Converte apenas para hora legível (ex: "15:30:45 GMT+0100")
+
+// toUTCString()
+// // Converte para string UTC (ex: "Tue, 17 Jun 2025 14:30:45 GMT")
+
+// toISOString()
+// // Converte para ISO 8601 (ex: "2025-06-17T14:30:45.000Z")
+
+// toLocaleString()
+// // Converte para string formatada localmente (ex: "17/06/2025, 15:30:45")
+
+// toLocaleDateString()
+// // Converte apenas para data no formato local (ex: "17/06/2025")
+
+// toLocaleTimeString()
+// // Converte apenas para hora no formato local (ex: "15:30:45")
+
+// 1. Criando datas
+// 	1.	Crie uma data para hoje usando new Date() e exiba no console.
+// console.log(new Date())
+
+// 	2.	Crie uma data para 25 de dezembro de 2025 e exiba usando toString().
+// console.log(new Date("2025-12-25").toString())
+
+// 	3.	Crie uma data com hora específica: 1 de janeiro de 2026, 08:30:45 e exiba com toLocaleString().
+// console.log(new Date("2026-01-16T08:30:45").toLocaleString())
+// ⸻
+
+// 2. Obtendo informações da data
+// 	4.	Pegue a data atual e exiba:
+// let date =  new Date()
+// 	•	Ano
+// console.log(date.getFullYear())
+// 	•	Mês
+// console.log(date.getMonth())
+	// •	Dia do mês
+// console.log(date.getDate())
+// 	•	Dia da semana
+// console.log(date.getDay())
+// 	•	Hora, minuto e segundo
+// console.log(date.toLocaleTimeString())
+// 	5.	Pegue a data 17 de junho de 2025 15:30 e exiba a hora em UTC usando getUTCHours().
+date = new Date('2025-06-17T15:30:00')
+// console.log(date.getHours())
+
+let dia = 9
+let mes = 3
+let ano = 1996
+
+const bday = new Date(`${ano}-${mes}-${dia}`)
+
+// console.log(bday)
+
+// ⸻
+
+// 3. Modificando datas
+// 	6.	Crie uma data para hoje e depois:
+// 	•	Adicione 5 dias
+bday.setDate(bday.getDate() + 5)
+// console.log(bday)
+
+// 	•	Subtraia 2 horas
+bday.setHours(bday.getHours() - 2)
+// console.log(bday)
+// 	•	Adicione 30 minutos
+bday.setMinutes(bday.getMinutes() + 30)
+// console.log(bday)
+// 	•	Exiba a data final com toLocaleString()
+// console.log(bday.toLocaleString())
+
+// 	7.	Crie uma data para 1 de janeiro de 2025 e use setFullYear(), setMonth() e setDate() para mudar para 17 de agosto de 2026.
+const newDate = new Date("2025-01-01")
+newDate.setFullYear(2026)
+newDate.setMonth('08')
+newDate.setDate(17)
+// console.log(newDate)
+// ⸻
+
+// 4. Comparando datas
+// 	8.	Crie duas datas:
+// 	•	Data A: 17 de junho de 2025
+const dateA = new Date('2025-06-17')
+// 	•	Data B: 25 de dezembro de 2025
+const dateB = new Date('2025-12-25')
+// Calcule a diferença em dias entre elas.
+const milisec = dateB-dateA;
+const days = milisec / (1000*60*60*24)
+
+// console.log(days)
+// ⸻
+
+// 5. Trabalhando com timestamps
+
+// 	9.	Pegue a data atual e transforme em timestamp com getTime().
+
+// Depois, crie uma nova data a partir desse timestamp e exiba.
+const dateC = new Date(dateA.getTime())
+// console.log(dateC)
+// 	10.	Crie uma data usando Date.UTC() para 17 de junho de 2025, 12:00 UTC e exiba:
+const dateD = new Date("2025-06-17T12:00:00").toUTCString()
+
+// 	•	Hora local
+// console.log(dateD.getFullYear())
+// 	•	Hora UTC
+
