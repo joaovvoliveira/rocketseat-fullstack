@@ -56,11 +56,11 @@ const { adress, street } = user
 
 // METODOS DE ARRAY
 
-const array = [1,2,3,4,5]
+// const array = [1,2,3,4,5]
 
-for (const i in array) {
-  document.body.innerText += array[i]
-}
+// for (const i in array) {
+//   document.body.innerText += array[i]
+// }
 
 // const Dom = {
 //   seletor: 'li',
@@ -223,7 +223,7 @@ class Carro {
 
 const Honda = new Carro('Civic',2013,'Azul',35600)
 
-Honda.showInfo()
+// Honda.showInfo()
 
 class Caminhao extends Carro {
   get precoRevenda() {
@@ -233,7 +233,7 @@ class Caminhao extends Carro {
 
 const truck = new Caminhao('Mercedez', 2006, 'Branco', 150000)
 
-truck.showInfo()
+// truck.showInfo()
 // console.log(honda)
 // console.log(honda)
 //Verifica se possui determinado item
@@ -292,3 +292,32 @@ truck.showInfo()
 
 
 // links.forEach(ativarLink);
+
+class Button {
+  constructor(text,background,btnElement) {
+    this.text = text;
+    this.background = background
+    this.btnElement = document.querySelector(`${btnElement}`)
+  }
+
+  element() {
+    this.btnElement.innerText = this.text
+    this.btnElement.style.color = 'white'
+    this.btnElement.style.backgroundColor = this.background
+    // return btnElement
+  }
+
+  static clique() {
+    // const btnElement = document.querySelector('button')
+    this.btnElement.addEventListener('click', () => {
+      alert('alou')
+    })
+  }
+}
+
+const blueBtn = new button('Compra','blue','button')
+
+blueBtn.clique()
+blueBtn.element()
+
+
