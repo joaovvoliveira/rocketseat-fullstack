@@ -187,26 +187,58 @@ const newFruits = fruits.splice(1, 5)
 5- Retorna o novo objeto
 */
 
-function Carro(modelo, precoInicial) {
-  if (modelo === 'Civic') {
-    this.marca = 'Honda'
-  } else if (modelo === 'Palio') {
-    this.marca = 'Fiat'
+// function Carro(modelo, precoInicial) {
+//   if (modelo === 'Civic') {
+//     this.marca = 'Honda'
+//   } else if (modelo === 'Palio') {
+//     this.marca = 'Fiat'
+//   }
+
+//   const taxa = 1.2
+//   const precoFinal = precoInicial * taxa
+//   this.preco = precoFinal
+// }
+
+// const honda = new Carro('Civic', 20000)
+
+
+class Carro {
+  constructor(modelo, ano, cor, precoFIP) {
+    this.modelo = modelo
+    this.ano = ano
+    this.cor = cor
+    this.precoFIP = precoFIP
   }
 
-  const taxa = 1.2
-  const precoFinal = precoInicial * taxa
-  this.preco = precoFinal
+  get precoRevenda() {
+    
+    return this.precoFIP * 1.1
+  }
+
+  showInfo() {
+    // const precoRev = this.precoFIP * 1.1
+    console.log(`${this.modelo} tem o preco de Revenda: ${this.precoRevenda} com `)
+  }
 }
 
-const honda = new Carro('Civic', 20000)
+const Honda = new Carro('Civic',2013,'Azul',35600)
 
+Honda.showInfo()
+
+class Caminhao extends Carro {
+  get precoRevenda() {
+    return this.precoFIP * 1.2
+  }
+}
+
+const truck = new Caminhao('Mercedez', 2006, 'Branco', 150000)
+
+truck.showInfo()
+// console.log(honda)
 // console.log(honda)
 //Verifica se possui determinado item
 // console.log(lista.includes(returnName('Victor')))
 // console.log(lista[3])
-
-
 
 // const links = document.querySelectorAll('a')
 

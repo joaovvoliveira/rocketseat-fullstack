@@ -3795,3 +3795,17 @@ const dateD = new Date("2025-06-17T12:00:00").toUTCString()
 // console.log(dateD.getFullYear())
 // 	•	Hora UTC
 
+const curretLocale = Intl.DateTimeFormat().resolvedOptions()
+// console.log(curretLocale)
+// document.body.innerText = curretLocale
+
+// console.log( new Intl.DateTimeFormat('pt-BR').format(new Date()))
+// console.log( new Intl.DateTimeFormat('en-US').format(new Date()))
+
+const data = new Date()
+// console.log(data.getTimezoneOffset())
+// console.log(data.getTimezoneOffset() / 60)
+
+// console.log(data.getDay())
+// console.log("12".padStart(4, "0"))
+
