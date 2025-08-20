@@ -36,6 +36,7 @@ const linksInternos = document.querySelectorAll('a[href^="#"]')
 
 function handleLink(e) {
   e.preventDefault()
+
   linksInternos.forEach(item => {
     item.classList.remove('ativo')
   })
@@ -69,31 +70,31 @@ wholeBody.addEventListener('click', (e) => {
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
 
 function handleKeyT(e) {
-  if(e.key === 'T') {
+  if (e.key === 'T') {
     document.documentElement.classList.toggle('.textomaior')
   }
 }
 window.addEventListener('keydown', handleKeyT)
 
 
-/* ---------------------------------- */ 
+/* ---------------------------------- */
 
 function initTabNav() {
 
   const tabMenu = document.querySelectorAll('.js-tabmenu li')
   const tabContent = document.querySelectorAll('.js-tabcontent section')
-  
-  
+
+
   if (tabContent.length && tabMenu.length) {
-    
+
     function activeTab(index) {
       tabContent.forEach(section => {
         section.classList.remove('ativo')
       })
       tabContent[index].classList.add('ativo')
     }
-    
-    tabMenu.forEach((item,index) => {
+
+    tabMenu.forEach((item, index) => {
       item.addEventListener('click', () => {
         activeTab(index)
       })
@@ -130,87 +131,78 @@ initTabNav()
 // initTabNav();
 
 
-const accordionList = document.querySelectorAll('.js-accordion dt')
+function initAccordion() {
+  const accordionList = document.querySelectorAll('.js-accordion dt');
+  const activeClass = 'ativo';
 
-function activeAccordion() {
-  this.classList.toggle('ativo')
-  this.nextElementSibling.classList.toggle('ativo')
-}
+  if (accordionList.length) {
+    accordionList[0].classList.add(activeClass);
+    accordionList[0].nextElementSibling.classList.add(activeClass);
 
-accordionList.forEach(item => {
-  item.addEventListener('click', activeAccordion)
-})
-
-// function initAccordion() {
-//   const accordionList = document.querySelectorAll('.js-accordion dt');
-//   const activeClass = 'ativo';
-  
-//   if(accordionList.length) {
-//     accordionList[0].classList.add(activeClass);
-//     accordionList[0].nextElementSibling.classList.add(activeClass);
-
-//     function activeAccordion() {
-//       this.classList.toggle(activeClass);
-//       this.nextElementSibling.classList.toggle(activeClass);
-//     }
-
-//     accordionList.forEach((item) => {
-//       item.addEventListener('click', activeAccordion);
-//     });
-//   }
-// }
-// initAccordion();
-
-function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
-
-  function scrollToSection(event) {
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
-    const section = document.querySelector(href);
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-
-    // forma alternativa
-    // const topo = section.offsetTop;
-    // window.scrollTo({
-    //   top: topo,
-    //   behavior: 'smooth',
-    // });
-  }
-
-  linksInternos.forEach((link) => {
-    link.addEventListener('click', scrollToSection);
-  });
-}
-initScrollSuave();
-
-function initAnimacaoScroll() {
-  const sections = document.querySelectorAll('.js-scroll');
-  if(sections.length) {
-    const windowMetade = window.innerHeight * 0.6;
-
-    function animaScroll() {
-      sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const isSectionVisible = (sectionTop - windowMetade) < 0;
-        if(isSectionVisible)
-          section.classList.add('ativo');
-        else 
-          section.classList.remove('ativo');
-      })
+    function activeAccordion() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(activeClass);
     }
 
-    animaScroll();
-
-    window.addEventListener('scroll', animaScroll);
+    accordionList.forEach((item) => {
+      item.addEventListener('click', activeAccordion);
+    });
   }
 }
-initAnimacaoScroll();
+initAccordion();
 
+function initScrollSuave() {
 
+  const linksInterno = document.querySelectorAll('.js-menu a[href^="#')
+
+  linksInterno.forEach(link => {
+    link.addEventListener('click', scrollToSection)
+  })
+
+  function scrollToSection(e) {
+    e.preventDefault()
+
+    const href = e.currentTarget.getAttribute('href')
+    const section = document.querySelector(href)
+    console.log(href)
+    console.log(section.offsetTop)
+    const topo = section.offsetTop
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: 'start'
+    })
+    // window.scrollTo({
+    //   top: topo,
+    //   behavior: "smooth"
+
+    // })
+  }
+}
+initScrollSuave()
+
+function initAnimationScroll() {
+
+  if(sections.length) {
+    
+    const sections = document.querySelectorAll('.js-scroll')
+    const window60 = window.innerHeight * 0.6
+    function animalScroll() {
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top - window60
+        const isSectionVisible = (sectionTop - window60) < 0;
+        if (isSectionVisible)
+          section.classList.add('ativo')
+        else
+        section.classList.remove('ativo')
+    })
+  }
+  animalScroll()
+  
+  window.addEventListener('scroll', animalScroll)
+}
+}
+initAnimationScroll()
 // const img = document.querySelectorAll('img')
 
 // function callback(e) {
