@@ -42,7 +42,7 @@ body {
             color: var(--blue-900);
           }
 
-          select,input[type="number"] {
+          select,input[type="text"] {
             font: var(--font-span);
             color: var(--blue-900);
             padding: 16px 20px;

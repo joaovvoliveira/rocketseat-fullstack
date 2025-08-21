@@ -27,16 +27,44 @@ const currencyRealTime = {
 
 const btnConversor = document.querySelector("#converter");
 
-btnConversor.addEventListener("click", () => {
-  const value = document.querySelector("#value").value;
-  const currency = document.querySelector("#currency").value;
-  const conversor = currencyRealTime[currency].value;
-  const result = document.querySelector("#result");
+const inputValue = document.getElementById('value')
 
-  console.log(value);
-  console.log(currency);
-  console.log(currencyRealTime);
-  console.log(conversor);
-  const resultado = value * conversor;
-  result.innerHTML = `Resultado: ${resultado.toFixed(2)}`;
+inputValue.oninput = () => {
+  let value = inputValue.value.replace(/\D/g,"")
+
+  value = Number(value) / 100
+
+  inputValue.value = formatCurrencyBRL(value)
+}
+
+function formatCurrencyBRL(value) {
+  value = value.toLocaleString("pt-BR", {
+    style: 'currency',
+    currency: 'BRL'
+  })
+
+  return value
+}
+
+btnConversor.addEventListener("click", () => {
+  try {
+    const valueReal = document.querySelector("#value").value;
+    const currency = document.querySelector("#currency").value;
+    const conversor = currencyRealTime[currency].value;
+    const result = document.querySelector("#result");
+    
+    console.log(valueReal);
+    
+    if (!valueReal) {
+      alert('Insira valor em Reais')
+      return
+    }
+    const resultado = `${(parseFloat(valueReal.toUpperCase().replace("R$","").replace(',','.')) * conversor).toFixed(2)}`
+    result.textContent = `R$ ${formatCurrencyBRL(resultado).replace('.',',')}`
+    // valueReal.value = ''
+  } catch (e) {
+    alert('Erro na conversao')
+  }
+  // value.textContent = ''
+  // result.innerHTML = `Resultado: ${resultado.toFixed(2)}`;
 });
